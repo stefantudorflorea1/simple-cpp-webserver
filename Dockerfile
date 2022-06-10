@@ -49,5 +49,8 @@ RUN apk update && apk add --no-cache libstdc++
 # Copy from the previous step marked as 'build' all the produced binaries
 COPY --from=builder /app/build/bin /usr/local/bin
 
+# for aws-elastic-beanstalk
+EXPOSE 8080
+
 # Start the server
 CMD ./usr/local/bin/simple-cpp-webserver

@@ -1,0 +1,5 @@
+services:
+  - docker
+
+before_install:
+  - docker build -t sfl/simple-cpp-webserver .
