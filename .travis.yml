@@ -5,3 +5,15 @@ services:
 
 before_install:
   - docker build -t sfl/simple-cpp-webserver .
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-central-1'
+  app: 'simple-cpp-webserver'
+  env: 'simple-cpp-webserver'
+  bucket_name: 'elasticbeanstalk-eu-central-1-611226360535'
+  bucket_path: 'simple-cpp-webserver'
+  access-key-id: ${AWS_ACCESS_KEY}
+  secret-access-key: ${AWS_SECRET_ACCESS_KEY}
+  on:
+    branch: master
