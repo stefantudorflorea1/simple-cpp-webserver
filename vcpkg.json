@@ -1,0 +1,9 @@
+{
+    "name": "simple-cpp-webserver",
+    "version-string": "1.0",
+    "dependencies": [
+        "restinio",
+        "fmt",
+        "http-parser"
+    ]   
+}
